@@ -1,0 +1,29 @@
+body{
+    margin-left: 14px;
+}
+
+.chat{
+    background-color: rgb(203, 227, 248);
+    /* border: 1px solid black; */
+    border-radius: 12px;
+    padding: 5px;
+    display: inline-block;
+    width: 20rem;
+}
+
+.msg{
+    border-radius: 12px;
+    background-color: rgba(19, 34, 109, 0.795);
+    display: inline-block;
+    padding: 6px;
+}
+
+.msg p{
+    color: white;
+    margin:0;
+
+}
+
+.edit-form, .delete-form{
+    margin: 10px;
+}
