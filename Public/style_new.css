@@ -1,0 +1,103 @@
+:root {
+    --bg-color: #0a0b10;
+    --card-bg: rgba(20, 24, 35, 0.8);
+    --primary-neon: #00f2ff;
+    --secondary-neon: #7000ff;
+    --text-color: #e0e6ed;
+    --border-glow: 0 0 15px rgba(0, 242, 255, 0.3);
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0b10 100%);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--primary-neon);
+    text-shadow: 0 0 10px var(--primary-neon);
+    margin-bottom: 20px;
+}
+
+h2 u {
+    text-decoration: none;
+    border-bottom: 2px solid var(--primary-neon);
+}
+
+/* Form Container */
+form {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--border-glow);
+    width: 350px;
+    border-left: 5px solid var(--secondary-neon);
+}
+
+/* Labels */
+label, #msg_label {
+    display: block;
+    color: var(--secondary-neon);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* Inputs and Textarea */
+input, textarea {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    padding: 10px;
+    color: var(--primary-neon);
+    font-family: 'Courier New', monospace;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box; /* Prevents overflow */
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+/* The Futuristic "Post" Button */
+button {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--primary-neon);
+    color: var(--primary-neon);
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--primary-neon);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--primary-neon);
+}
+
+::placeholder {
+    color: #444;
+}

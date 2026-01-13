@@ -38,7 +38,11 @@ app.get("/chats/new" , (req,res) => {
 
 app.post("/chats", (req,res) => {
     let chatData = req.body;
+    console.log(chatData);
     let { from , to , msg } = chatData;
+    if (msg.length > 50) {
+        return res.send("DATA ERROR: Message length exceeds 50-character limit.");
+    }
     let newChat = new Chat({
         from : from,
         to : to,
@@ -47,7 +51,7 @@ app.post("/chats", (req,res) => {
     })
     newChat.save()
         .then(() => {
-            console.log("interted successfuly");
+            // console.log("interted successfuly");
         }).catch((err) => {
             console.log(err);
         })

@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Chat</title>
-</head>
+    <link rel="stylesheet" href="/style_new.css"> </head>
 <body>
+    <h2><u>Edit Transmission</u></h2>
+    
     <form action="/chat/<%= chat._id %>?_method=PUT" method="post">
-        <p><b>From:</b> <%= chat.from %></p>        
-        <p><b>To:</b> <%= chat.to %></p>
-        <hr>
-        <textarea name="msg" cols="40" rows="10"><%= chat.msg %></textarea>
-        <br>    
-        <button type="submit">Confirm edit</button>
+        <div class="readonly-field">
+            <label>From :</label>
+            <p class="static-data"><%= chat.from %></p>
+        </div>
+        
+        <div class="readonly-field">
+            <label>To :</label>
+            <p class="static-data"><%= chat.to %></p>
+        </div>
+
+        <label for="msg">Message :</label>
+        <textarea name="msg" id="msg" rows="8" cols="35"><%= chat.msg %></textarea>
+        
+        <br><br>
+        <button type="submit">Confirm Edit</button>
     </form>
 </body>
 </html>

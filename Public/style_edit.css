@@ -1,0 +1,87 @@
+/* Edit Page Specific Styling */
+
+.edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.edit-container h2 {
+    color: var(--secondary-neon);
+    text-shadow: 0 0 15px rgba(112, 0, 255, 0.5);
+    font-size: 1.8rem;
+}
+
+.info-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 2px solid var(--secondary-neon);
+    margin-bottom: 20px;
+}
+
+.info-header p {
+    margin: 5px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #8892b0;
+}
+
+.info-header span {
+    color: var(--primary-neon);
+    font-weight: bold;
+}
+
+/* Label for the textarea */
+label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--secondary-neon);
+}
+
+/* Styled Textarea */
+textarea {
+    width: 100%;
+    background: rgba(10, 11, 16, 0.8);
+    border: 1px solid #333;
+    border-top: 2px solid var(--secondary-neon);
+    padding: 15px;
+    color: var(--text-color);
+    font-family: 'Courier New', monospace;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.3s ease;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: var(--secondary-neon);
+    box-shadow: 0 0 15px rgba(112, 0, 255, 0.3);
+}
+
+/* Confirm Button Styling */
+button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+    background: linear-gradient(45deg, var(--secondary-neon), #4b0082);
+    border: none;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    filter: brightness(1.3);
+    box-shadow: 0 0 25px var(--secondary-neon);
+    letter-spacing: 5px; /* Subtle expansion effect */
+}

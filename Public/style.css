@@ -1,29 +1,144 @@
-body{
-    margin-left: 14px;
+/* style.css */
+
+:root {
+    --bg-color: #0a0b10;
+    --card-bg: rgba(20, 24, 35, 0.8);
+    --primary-neon: #00f2ff;
+    --secondary-neon: #7000ff;
+    --text-color: #e0e6ed;
+    --accent-delete: #ff0055;
+    --border-glow: 0 0 10px rgba(0, 242, 255, 0.3);
 }
 
-.chat{
-    background-color: rgb(203, 227, 248);
-    /* border: 1px solid black; */
-    border-radius: 12px;
-    padding: 5px;
+body {
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0b10 100%);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--primary-neon);
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+button {
+    background: transparent;
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+button:hover {
+    background: var(--primary-neon);
+    color: #000;
+    box-shadow: 0 0 20px var(--primary-neon);
+}
+
+/* Chat Card Container */
+.chat {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--secondary-neon);
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: var(--border-glow);
+    position: relative;
+    overflow: hidden;
+}
+
+.chat::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(225deg, var(--secondary-neon) 0%, transparent 50%);
+}
+
+.from, .to {
+    font-size: 0.9rem;
+    color: #8892b0;
+}
+
+.from i, .to i {
+    color: var(--primary-neon);
+    font-style: normal;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.msg {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.msg b {
+    color: var(--secondary-neon);
+}
+
+/* Form layouts within chat */
+.edit-form, .delete-form {
     display: inline-block;
-    width: 20rem;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
-.msg{
-    border-radius: 12px;
-    background-color: rgba(19, 34, 109, 0.795);
-    display: inline-block;
-    padding: 6px;
+.delete-form button {
+    border-color: var(--accent-delete);
+    color: var(--accent-delete);
 }
 
-.msg p{
-    color: white;
-    margin:0;
-
+.delete-form button:hover {
+    background: var(--accent-delete);
+    color: var(--bg-color); /* This ensures the text stays visible */
+    box-shadow: 0 0 20px var(--accent-delete);
 }
 
-.edit-form, .delete-form{
-    margin: 10px;
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary-neon), transparent);
+    margin: 20px 0;
+}
+
+.time {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--primary-neon); /* Matches the cyan glow */
+    text-align: right;
+    margin: 4px 0;
+    opacity: 0.8; /* Keeps it subtle but readable */
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+}
+
+/* Specific styling for the date to separate it from the time */
+.time:last-child {
+    color: var(--secondary-neon); /* Uses the purple accent for the date */
+    opacity: 0.7;
+    font-size: 0.75rem;
+    text-transform: uppercase;
 }
